@@ -14,7 +14,7 @@ public class Greeting {
         System.out.print(luku);
         System.out.print(id);
         this.luku = luku*2;
-        Query.Query();
+        Query.Query("Richard");
 
     }
     public long getId() {
