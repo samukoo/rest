@@ -8,13 +8,8 @@ public class Name {
     
     public Name(long id, String name) {
         this.id = id;
-        //this.name = name;
-        //System.out.print(name);
-        //System.out.print(id);
         this.name = Query.Query(name);
         System.out.print(name);
-
-
         }
 
      public long getId() {

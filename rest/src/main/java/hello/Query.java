@@ -7,11 +7,11 @@ public class Query {
 
 		
 
-		public static String Query(String pethaku) {
+		public static String Query(String liike) {
         
         String name ="voijumalauta";    
       	String url = "jdbc:mysql://localhost:3306/";
-		String dbName = "test";
+		String dbName = "gymlog";
 		String driver = "com.mysql.jdbc.Driver";
 		String userName = "root"; 
 		String password = "root";
@@ -21,17 +21,13 @@ public class Query {
 		Class.forName(driver).newInstance();
 		Connection conn = DriverManager.getConnection(url+dbName,userName,password);
 		
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM pet WHERE owner = ?");
-			stmt.setString(1, pethaku);
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM gymlog_workout WHERE liike = ?");
+			stmt.setString(1, liike);
 			ResultSet res = stmt.executeQuery();
 
 			while (res.next()) 
 			{
-		  	name = res.getString("name");
-		  	/*
-		  	System.out.println(pethaku);
-		  	System.out.println(name);
-		  	*/
+		  	name = res.getString("kilot");
 		  	}
 		conn.close();
 		} 
