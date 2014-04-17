@@ -5,10 +5,12 @@ import java.sql.*;
 
 public class Query {
 
-       public static void Query(String pethaku) {
+		
+
+		public static String Query(String pethaku) {
         
-       
-      String url = "jdbc:mysql://localhost:3306/";
+        String name ="voijumalauta";    
+      	String url = "jdbc:mysql://localhost:3306/";
 		String dbName = "test";
 		String driver = "com.mysql.jdbc.Driver";
 		String userName = "root"; 
@@ -23,28 +25,21 @@ public class Query {
 			stmt.setString(1, pethaku);
 			ResultSet res = stmt.executeQuery();
 
-			/*
-			Statement st = conn.createStatement();
-			ResultSet res = st.executeQuery("SELECT name from pet where owner = 'Diane'");
-			*/
-
 			while (res.next()) 
 			{
-		  	String name = res.getString("name");
-		  	//String owner = res.getString("owner");
-		  	//System.out.println(name + "\t" + owner);
+		  	name = res.getString("name");
+		  	/*
 		  	System.out.println(pethaku);
 		  	System.out.println(name);
+		  	*/
 		  	}
-
 		conn.close();
 		} 
-
 		catch (Exception e) 
 		{
 		e.printStackTrace();
 		}
-
-
+	return name;
+	
     }
 }
