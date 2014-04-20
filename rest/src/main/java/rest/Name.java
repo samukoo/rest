@@ -4,19 +4,23 @@ package rest;
 public class Name {
 
     private final long id;
-    private final String name;
+    private final String liike;
     
-    public Name(long id, String name) {
+    public Name(long id, String liike) {
         this.id = id;
-        this.name = Query.Query(name);
-        System.out.print(name);
+        
+        Query db = new Query();
+        this.liike = db.Query(liike);
+                
+        //this.name = Query.Query(name);
+        System.out.print(liike);
         }
 
      public long getId() {
         return id;
     }
     public String getName() {
-        return name;
+        return liike;
     }
     
         
