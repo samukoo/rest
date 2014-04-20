@@ -8,7 +8,7 @@ public class Query {
 
 		public String Query(String liike) {
         
-		ArrayList result = new ArrayList();	
+			
         
 		String name="joo";    
       	String url = "jdbc:mysql://localhost:3306/";
@@ -28,14 +28,23 @@ public class Query {
 			stmt.setString(1, liike);
 			ResultSet res = stmt.executeQuery();
 
-			System.out.println(res);
-			
+			//luodaan db tuloksille instansoitu taulukkomuuttuja "result"
+			ArrayList<String> result = new ArrayList<String>();
+								
+			//tehdään niin pitkään kun res.next ei palauta falsea, eli kun on tuloksia
+			//eli result taulukkoon lisätään tuloksien "liike"
 			while (res.next()) 
 			{
-		  	name = res.getString("liike");
+		  	result.add(res.getString("liike"));
 		  	}
-		
-			//System.out.println(name);
+			
+			
+			for(int i=0; i < result.size() ; i++){
+			
+				System.out.println(result.get(i));
+			
+			}
+			
 			
 		conn.close();
 		} 
@@ -43,7 +52,9 @@ public class Query {
 		{
 		e.printStackTrace();
 		}
-	return name;
+	
+		return name;	
+	//return name;
 	
     }
 }
