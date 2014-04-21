@@ -11,20 +11,13 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     
-        Application app1 = new Application(),app2 = new Application();
-        app1.testiTulostus("13.03.2014");
-        
-        
-    }
-
-    public void testiTulostus(String liike){
-    	    	      
-        Query db = new Query();
-           
-        System.out.println(db.Query(liike));
-        
-        
-        
-        
+    Date db2 = new Date();
+    
+    Query db = new Query();
+    
+    
+    
+    
+    
     }
 }
