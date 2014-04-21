@@ -1,5 +1,6 @@
-
 package rest;
+
+
 
 public class Name {
 
@@ -16,10 +17,10 @@ public class Name {
         System.out.print(liike);
         }
 
-     public long getId() {
+    public long getId() {
         return id;
     }
-    public String getName() {
+    public String getToistot() {
         return liike;
     }
     

@@ -11,13 +11,17 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     
-    Date db2 = new Date();
+    Query testi = new Query();
+    System.out.println( testi.Query("kyykky"));
+        
+    /*    
+    Search_Date db2 = new Search_Date();
     
-    Query db = new Query();
-    
-    
+    db2.SearchDate(0, "13.03.2014");
+    System.out.println(db2.getResult());
+    */
     
     
     
     }
-}
+    }
