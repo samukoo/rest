@@ -9,7 +9,7 @@ public class QueryArray {
 
 		public ArrayList<String> Query(String date) {
         
-		ArrayList<String> result = new ArrayList<String>();	
+		ArrayList result = new ArrayList();	
         
 		String url = "jdbc:mysql://localhost:3306/";
 		String dbName = "gymlog";
@@ -28,13 +28,15 @@ public class QueryArray {
 			
 			while (res.next()) 
 			{
-		  	result.add(res.getString("liike"));
-		  	}
-			
-			for(int i=0; i < result.size() ; i++){
-			
-				System.out.println(result.get(i));
+				MessageObjects messageObject = new MessageObjects();
+				messageObject.setLiike(res.getString("liike"));
+				messageObject.setToistot(res.getString("toistot"));
+				messageObject.setPainot(res.getInt("kilot"));
+				
+			result.add(messageObject);	
+		  	
 			}
+			
 			
 		conn.close();
 		} 

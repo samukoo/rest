@@ -34,6 +34,7 @@ public class RequestController
 	@RequestMapping("/search_date")
     public @ResponseBody Search_Date name2(@RequestParam(value="date", required=false, defaultValue="")String name2){
         
+		String format;
 		return new Search_Date(counter.incrementAndGet(), name2);
 		
 		
