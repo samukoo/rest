@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.*;
 
 //haetaan päivämäärällä. Tuloksena palutetaan Arraylista tietokannasta
+//MessageObjectia käytetään tulosten viemiseen ja tuomiseen oikeaan muotoon arraylle joka palautetaan
 
 public class QueryArray {
 
@@ -33,10 +34,8 @@ public class QueryArray {
 				messageObject.setToistot(res.getString("toistot"));
 				messageObject.setPainot(res.getInt("kilot"));
 				
-			result.add(messageObject);	
-		  	
+			result.add(messageObject);
 			}
-			
 			
 		conn.close();
 		} 

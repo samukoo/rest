@@ -24,11 +24,7 @@ public class Search_Date {
         return result;
     }	
 	
-     /*
-     public ArrayList<String> getResult2() {
-         return result;
-     }	
-     */
+     
      
      
 }
