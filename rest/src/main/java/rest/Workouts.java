@@ -6,21 +6,24 @@ import java.util.ArrayList;
 public class Workouts{
 
 	private ArrayList result;	
-	private long id;
+	//private long id;
 	
 	
-	public Workouts(long id, String search){
+	public Workouts(){
 		
-		this.id = id;	//counter id
+		//this.id = id;	//counter id
 		QueryWorkout qw = new QueryWorkout();	//luodaan qw Olio
-			this.result = qw.QueryWorkout(search);	//tallennetaan resultiksi Olion return
+			this.result = qw.QueryWorkout();	//tallennetaan resultiksi Olion return
 	}
 		
 	//getterit, Workouts ei palauta mitään, getterit palauttaa arvot
-	public ArrayList getResult(){
-		return this.result;
-	}
+	/*
 	public long getId(){
 		return this.id;
 	}
+	*/
+	public ArrayList getResult(){
+		return this.result;
+	}
+	
 }

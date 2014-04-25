@@ -26,7 +26,6 @@ public class RequestController
 	@RequestMapping("/workouts")
 	public @ResponseBody Workouts workouts(){
 		
-		String search = "moi";
-		return new Workouts(counter.incrementAndGet(),search);
+		return new Workouts();
 	}
 }
