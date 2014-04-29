@@ -23,7 +23,7 @@ public class QueryArray {
 		Class.forName(driver).newInstance();
 		Connection conn = DriverManager.getConnection(url+dbName,userName,password);
 	
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM gymlog_workout WHERE date = ? ORDER by liike");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM gymlog_workout WHERE date = ? ORDER by id");
 			stmt.setString(1, date);
 			ResultSet res = stmt.executeQuery();
 			

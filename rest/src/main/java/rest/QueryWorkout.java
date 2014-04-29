@@ -26,7 +26,7 @@ public class QueryWorkout {
 		{
 		Class.forName(driver).newInstance();
 		Connection conn = DriverManager.getConnection(url+dbName,userName,password);	
-			PreparedStatement prst = conn.prepareStatement("SELECT date from gymlog_workout GROUP BY date");
+			PreparedStatement prst = conn.prepareStatement("SELECT date from gymlog_workout GROUP BY date DESC");
 			ResultSet res = prst.executeQuery(); //resultsettiin queryn tulos
 		
 		while(res.next())	//tehdään kunnes resultsetti palauttaa falsen (eli data loppuu)
