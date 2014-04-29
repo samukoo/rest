@@ -7,13 +7,13 @@ public class MessageObjects {
 	private int kilot;
 	
 	public String getLiike(){
-		return liike;
+		return this.liike;
 	}
 	public String getToistot(){
-		return toistot;
+		return this.toistot;
 	}	
 	public int getPainot(){
-		return kilot;
+		return this.kilot;
 	}
 	public void setLiike(String liike){
 		this.liike = liike;

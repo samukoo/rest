@@ -12,7 +12,7 @@ public class WorkoutQuery {
 		this.id = id;
 	}
 	public int getId(){
-		return id;
+		return this.id;
 	}
 	public void setWorkout(String workout){
 		this.workout = workout;
