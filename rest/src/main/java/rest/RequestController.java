@@ -1,6 +1,6 @@
 package rest;
 
-import java.util.*;
+//import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.stereotype.Controller;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class RequestController 
 	{
     
-	public ArrayList<String> date = new ArrayList<String>();
+	//public ArrayList<String> date = new ArrayList<String>();
     private final AtomicLong counter = new AtomicLong();
  
     //haetaan päivämäärällä, palautuu liikkeet, toistot ja painot
