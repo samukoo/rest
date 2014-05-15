@@ -8,10 +8,10 @@ public class Exercises {
 	private ArrayList results;
 	
 	
-	public Exercises(){	
+	public Exercises(String user){	
 	
 		DataBaseQuery db_e = new DataBaseQuery();
-		this.results = db_e.select();
+		this.results = db_e.select(user);
 		}
 
 	//getterit

@@ -18,7 +18,7 @@ public class QueryWorkout {
     
     
     	//metodi palauttaa ArrayList:n
-		public ArrayList QueryWorkout(){ 
+		public ArrayList QueryWorkout(String user){ 
 		
 			ArrayList workouts = new ArrayList();	//luodaan ArrayList Olio "workouts" mihin tallennetaan tulokset
 				
@@ -26,7 +26,8 @@ public class QueryWorkout {
 		{
 		Class.forName(driver).newInstance();
 		Connection conn = DriverManager.getConnection(url+dbName,userName,password);	
-			PreparedStatement prst = conn.prepareStatement("SELECT date from gymlog_workout GROUP BY date DESC");
+			PreparedStatement prst = conn.prepareStatement("SELECT date from gymlog_workout WHERE user = ? GROUP BY date DESC");
+			prst.setString(1, user);
 			ResultSet res = prst.executeQuery(); //resultsettiin queryn tulos
 		
 		while(res.next())	//tehdään kunnes resultsetti palauttaa falsen (eli data loppuu)

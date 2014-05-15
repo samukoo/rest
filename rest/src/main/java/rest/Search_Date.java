@@ -7,11 +7,11 @@ public class Search_Date {
 	private final long id;
 	public ArrayList result = new ArrayList();
 		
-	public Search_Date(long id, String date){
+	public Search_Date(long id, String date, String user){
 		
 		this.id = id;        
 		QueryArray db = new QueryArray();
-		this.result = db.Query(date);
+		this.result = db.Query(date, user);
 		System.out.println(result);
 	
 		}
