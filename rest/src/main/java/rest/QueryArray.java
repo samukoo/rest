@@ -8,7 +8,7 @@ import java.util.*;
 
 public class QueryArray {
 
-		public ArrayList<String> Query(String date) {
+		public ArrayList<String> Query(String date, String user) {
         
 		ArrayList result = new ArrayList();	
         
@@ -23,8 +23,9 @@ public class QueryArray {
 		Class.forName(driver).newInstance();
 		Connection conn = DriverManager.getConnection(url+dbName,userName,password);
 	
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM gymlog_workout WHERE date = ? ORDER by id");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM gymlog_workout WHERE date = ? and user = ? ORDER by id");
 			stmt.setString(1, date);
+			stmt.setString(2, user);
 			ResultSet res = stmt.executeQuery();
 			
 			while (res.next()) 

@@ -1,5 +1,10 @@
 package rest;
 
+
+//uuden toistosarjan tallentamiseen tarvitaan liike. Liikkeet on tallennettu kantaan ja ne haetaan
+//rest rajapinnan avulla valintalistaan. Tämä on Exercises luokan setteri ja getteri luokka, jonka 
+//avulla tietokannan resultset saadaan tallennettua array muuttujaan joka palautetaan request controllerille.
+
 public class ExerciseObjects {
 
 	private String liike;

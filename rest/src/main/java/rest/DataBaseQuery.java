@@ -13,7 +13,7 @@ public class DataBaseQuery {
 
 	
 	
-	public ArrayList select(){
+	public ArrayList select(String user){
 		
 		//
 		
@@ -32,7 +32,8 @@ public class DataBaseQuery {
 		Class.forName(driver).newInstance();
 		Connection conn = DriverManager.getConnection(url+dbName,userName,password);
 	
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM gymlog_exercise");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM gymlog_exercise where user = ?");
+			stmt.setString(1, user);
 			ResultSet res = stmt.executeQuery();
 		
 			while(res.next())
