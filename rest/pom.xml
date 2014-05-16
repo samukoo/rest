@@ -67,4 +67,5 @@
             <snapshots><enabled>true</enabled></snapshots>
         </pluginRepository>
     </pluginRepositories>
+    <packaging>war</packaging>
 </project>
